@@ -9,6 +9,7 @@ import FlatButton from 'material-ui/FlatButton';
 import EditBookModal from './components/edit-book-modal/EditBookModal';
 import DeleteBookModal from './components/delete-book-modal/DeleteBookModal';
 import errorMessages from './constants/error-messages';
+import mockData from './MOCK_DATA.json'; 
 
 class App extends Component {
   state = {
