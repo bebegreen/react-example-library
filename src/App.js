@@ -28,16 +28,24 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    try {
-      const httpResponse = await axios.get(
-        'http://localhost:8080/MOCK_DATA.json',
-        {crossdomain: true}
-      );
-      this.setState({booksData: httpResponse.data}); 
+    // try {
+    //   const httpResponse = await axios.get(
+    //     'http://localhost:8080/MOCK_DATA.json',
+    //     {crossdomain: true}
+    //   );
+    //   this.setState({booksData: httpResponse.data}); 
     
+    // } catch (err) {
+    //   console.log(err);
+    // }
+    
+    //for deployment
+    try {
+      const httpResponse = await new Promise(resolve => resolve(mockData))
+      this.setState({booksData: httpResponse});
     } catch (err) {
       console.log(err);
-    }
+    } 
   }
 
   handleEditbook(book_id) {
