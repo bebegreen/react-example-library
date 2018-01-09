@@ -10,7 +10,6 @@ export default class Book extends Component {
 
   handleImgLoaded() { 
     this.setState({imgLoaded: true }); 
-    console.log('asdf')
   }
   toUpperCaseFirstLetter(string) {
       return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1))

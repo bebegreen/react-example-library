@@ -78,7 +78,6 @@ class App extends Component {
   handleBookInfoChanged(e, date) {
     const {currentBook, errors} = this.state;
     // only the date changed (does not send an event)
-    console.log(e.target.name); 
     if (!e) {
       this.setState({
         currentBook: {
@@ -161,7 +160,8 @@ class App extends Component {
     let {currentBook, booksData, errors} = this.state;
     const {title, auther} = currentBook;
     if (title && auther) {
-      if (booksData.find(book => book.title === title)) {
+      if (booksData.find(
+        book => book.title.toLowerCase() === title.toLowerCase())) {
         // title already exists
         this.setState({
           errors: {
